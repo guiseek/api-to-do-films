@@ -12,6 +12,9 @@ var FilmSchema = new Schema({
     description: {
         type: String
     },
+    heart: {
+        type: Boolean
+    },
     done: {
         type: Boolean
     },

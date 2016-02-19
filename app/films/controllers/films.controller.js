@@ -28,6 +28,22 @@ exports.create = function(req, res) {
         }
     });
 };
+exports.heart = function(req, res) {
+    var film = req.film;
+    film.heart = !film.heart;
+    film.save(function(err) {
+        if (err) {
+            res.status(400).json({
+                message: err
+            });
+        } else {
+            res.json({
+                message: 'Filme especial marcado com sucesso',
+                film: film
+            });
+        }
+    });
+};
 exports.update = function(req, res) {
     var film = req.film;
     film.name = req.body.name;
