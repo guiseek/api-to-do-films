@@ -14,7 +14,18 @@ var FilmSchema = new Schema({
     },
     done: {
         type: Boolean
+    },
+    created: {
+        type: Date
     }
-})
+});
+
+FilmSchema.pre('save', function(next) {
+    var film = this;
+    if (this.isNew) {
+        film.created = new Date();
+    }
+    next();
+});
 
 module.exports = mongoose.model('Film', FilmSchema);
