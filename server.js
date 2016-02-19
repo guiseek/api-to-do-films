@@ -16,4 +16,4 @@ app.listen(config.port);
 
 exports = module.exports = app;
 
-console.log('To Do Films App listening on port ' + config.port);
+console.log('API To Do Films listening on port ' + config.port);

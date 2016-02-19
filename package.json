@@ -1,11 +1,11 @@
 {
-  "name": "to-do-films-server-app",
+  "name": "api-to-do-films",
   "version": "1.0.0",
-  "description": "App To Do Films",
-  "main": "nodemon server.js",
+  "description": "API To Do Films",
+  "main": "node server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development nodemon server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [
     "app",
