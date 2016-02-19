@@ -59,6 +59,9 @@ exports.archive = function(req, res) {
             films.forEach(function(film) {
                 film.remove();
             });
+            res.json({
+                message: 'Filmes assistidos removidos com sucesso'
+            });
         }
     });
 };
