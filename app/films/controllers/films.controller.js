@@ -56,16 +56,8 @@ exports.archive = function(req, res) {
                 message: err
             });
         } else {
-            films.remove(function(err) {
-                if (err) {
-                    res.status(400).json({
-                        message: err
-                    });
-                } else {
-                    res.json({
-                        message: 'Filmes assistidos removidos com sucesso'
-                    });
-                }
+            films.forEach(function(film) {
+                film.remove();
             });
         }
     });
