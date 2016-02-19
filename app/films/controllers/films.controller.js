@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Film = require('../models/film.model');
 
 exports.findAll = function(req, res) {
-    Film.find({}).sort({created: 1}).exec(function(err, films) {
+    Film.find({}).sort({created: 'desc'}).exec(function(err, films) {
         if (err) {
             console.error(err);
             res.status(400).json(err);
