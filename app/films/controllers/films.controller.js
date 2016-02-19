@@ -49,6 +49,27 @@ exports.update = function(req, res) {
         }
     });
 };
+exports.archive = function(req, res) {
+    Film.find({done: true}).exec(function(err, films) {
+        if (err) {
+            res.status(400).json({
+                message: err
+            });
+        } else {
+            films.remove(function(err) {
+                if (err) {
+                    res.status(400).json({
+                        message: err
+                    });
+                } else {
+                    res.json({
+                        message: 'Filmes assistidos removidos com sucesso'
+                    });
+                }
+            });
+        }
+    });
+};
 exports.delete = function(req, res) {
     var film = req.film;
     film.remove(function(err) {

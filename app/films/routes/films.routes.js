@@ -5,7 +5,8 @@ module.exports = function(api) {
     
     api.route('/films')
         .get(films.findAll)
-        .post(films.create);
+        .post(films.create)
+        .delete(films.archive);
         
     api.route('/films/:filmId')
         .get(films.find)
