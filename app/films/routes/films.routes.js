@@ -9,9 +9,7 @@ module.exports = function(api) {
         .delete(films.archive);
         
     api.route('/films/:filmId')
-        .get(films.find)
-        .put(films.update)
-        .delete(films.delete);
+        .put(films.update);
         
     api.param('filmId', films.filmById);
 }

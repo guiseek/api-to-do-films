@@ -13,9 +13,6 @@ exports.findAll = function(req, res) {
         }
     });
 };
-exports.find = function(req, res) {
-    res.json(req.film);
-};
 exports.create = function(req, res) {
     var film = new Film(req.body);
     film.save(function(err) {
@@ -61,21 +58,6 @@ exports.archive = function(req, res) {
             });
             res.json({
                 message: 'Filmes assistidos removidos com sucesso'
-            });
-        }
-    });
-};
-exports.delete = function(req, res) {
-    var film = req.film;
-    film.remove(function(err) {
-        if (err) {
-            res.status(400).json({
-                message: err
-            });
-        } else {
-            res.json({
-                message: 'Filme removido com sucesso',
-                film: film
             });
         }
     });
