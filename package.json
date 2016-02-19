@@ -1,0 +1,23 @@
+{
+  "name": "to-do-films-server-app",
+  "version": "1.0.0",
+  "description": "App To Do Films",
+  "main": "nodemon server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development nodemon server.js"
+  },
+  "keywords": [
+    "app",
+    "to do films"
+  ],
+  "author": "Gui Seek",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "lodash": "^4.3.0",
+    "mongoose": "^4.4.3"
+  }
+}
