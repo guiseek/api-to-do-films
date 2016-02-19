@@ -35,6 +35,7 @@ exports.update = function(req, res) {
     var film = req.film;
     film.name = req.body.name;
     film.description = req.body.description;
+    film.done = req.body.done;
     film.save(function(err) {
         if (err) {
             res.status(400).json({
