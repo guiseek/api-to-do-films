@@ -28,9 +28,10 @@ exports.create = function(req, res) {
         }
     });
 };
-exports.heart = function(req, res) {
+exports.like = function(req, res) {
     var film = req.film;
-    film.heart = !film.heart;
+    var who_liked = req.params.who + '_liked';
+    film[who_liked] = !film[who_liked];
     film.save(function(err) {
         if (err) {
             res.status(400).json({
@@ -38,7 +39,7 @@ exports.heart = function(req, res) {
             });
         } else {
             res.json({
-                message: 'Filme especial marcado com sucesso',
+                message: 'Filme marcado com sucesso',
                 film: film
             });
         }

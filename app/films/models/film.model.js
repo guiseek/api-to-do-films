@@ -12,7 +12,10 @@ var FilmSchema = new Schema({
     description: {
         type: String
     },
-    heart: {
+    he_liked: {
+        type: Boolean
+    },
+    she_liked: {
         type: Boolean
     },
     done: {
