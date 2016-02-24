@@ -12,6 +12,9 @@ var FilmSchema = new Schema({
     description: {
         type: String
     },
+    poster: {
+        type: String
+    },
     he_liked: {
         type: Boolean
     },
@@ -23,10 +26,6 @@ var FilmSchema = new Schema({
     },
     created: {
         type: Date
-    },
-    user: {
-        type: Schema.ObjectId,
-        ref: 'User'
     }
 });
 
