@@ -23,6 +23,10 @@ var FilmSchema = new Schema({
     },
     created: {
         type: Date
+    },
+    user: {
+        type: Schema.ObjectId,
+        ref: 'User'
     }
 });
 

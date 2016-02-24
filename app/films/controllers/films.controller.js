@@ -15,6 +15,7 @@ exports.findAll = function(req, res) {
 };
 exports.create = function(req, res) {
     var film = new Film(req.body);
+    film.user = req.auth;
     film.save(function(err) {
         if (err) {
             res.status(400).json({
