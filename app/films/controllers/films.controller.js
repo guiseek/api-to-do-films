@@ -29,6 +29,22 @@ exports.create = function(req, res) {
         }
     });
 };
+exports.remove = function (req, res) {
+    var film = req.film;
+
+    film.remove(function (err) {
+        if (err) {
+            res.status(400).json({
+                message: err
+            });
+        } else {
+            res.json({
+                message: 'Filme removido com sucesso',
+                film: film
+            });
+        }
+    });
+};
 exports.like = function(req, res) {
     var film = req.film;
     var who_liked = req.params.who + '_liked';
